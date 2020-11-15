@@ -1,0 +1,47 @@
+{{object_list2}}
+
+<br>
+
+	
+{% for k in object_list %}
+{{k.items.1}}
+<br>
+<br>
+reference code:  
+{{k.ref_code}}
+<br>
+<br>
+start_date: 
+{{k.start_date}}
+<br>
+<br>
+ordered_date:
+{{k.ordered_date}}
+<br>
+<br>
+shipping_address:
+{{k.shipping_address}}
+<br>
+<br>
+billing_address: 
+{{k.billing_address}}
+<br>
+<br>
+payment:
+{{k.payment}}
+<br>
+<br>
+order is shipping: 
+{{k.being_delivered}}
+<br>
+<br>
+order received: 
+{{k.received}}
+
+--------------------
+<br>
+<br>
+
+{% endfor %}
+
+

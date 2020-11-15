@@ -1,0 +1,16 @@
+
+{{user.username}}
+<br>
+{% for k in object_list %}
+{{k.id}}
+<br>
+item ordered: 
+{{k.item}}
+<br>
+quantity:
+{{k.quantity}}
+<br>
+---------------
+<br>
+<br>
+{% endfor %}

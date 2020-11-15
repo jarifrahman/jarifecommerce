@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8&q=mosques+in+dhaka" allowfullscreen>
+</iframe>
+
+<br>
+<br>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:1"
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8&origin=Dhaka+Bangladesh&destination=Sylhet+Bangladesh&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+
+<br>
+<br>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:1"
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8&origin=Dhaka+Bangladesh&destination=Noahkhali+Bangladesh&avoid=tolls|highways" allowfullscreen>
+</iframe>
+
+
+<br>
+<br>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8
+    &q=Mirpur+Stadium,Dhaka+BD" allowfullscreen>
+</iframe>
+
+<br>
+<br>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/view?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8&center=33.8569,90.2152&zoom=18&maptype=satellite" allowfullscreen>
+</iframe>
+
+<br>
+<br>
+
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyC74lMb-qCFqWVzjVJ7V_Y_f-3DZXMXzH8&location=23.78238,90.418988&heading=210&pitch=10&fov=35" allowfullscreen>
+</iframe>
+
+
+<br>
+<br>
+
+<h2>GEO API</h2>
+  <p>Your ip address is <strong>{{ ip }}</strong>, and you are probably in <strong>{{ country }}</strong> right now.</p>
+  <p>This information {{ is_cached|yesno:"was,wasn't" }} cached.</p>
+  <iframe width="600"
+          height="450"
+          frameborder="0"
+          style="border:0"
+          src="https://www.google.com/maps/embed/v1/view?center={{ latitude }},{{ longitude }}&zoom=8&key={{ api_key }}"
+          allowfullscreen></iframe>
+          <br>
+          <br>
+
+<form method="get" action="{% url 'getip' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <input class="btn btn-primary" type="submit" value="Add Information" />
+</form>
+
+
+{{ip}}
+
+
+
+{% endblock %}
+

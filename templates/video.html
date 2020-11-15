@@ -1,0 +1,45 @@
+﻿{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Videos</title>
+</head>
+<body>
+
+    {% if request.user.is_authenticated %}
+
+    <h1>Video Uploader</h1>
+    <form enctype="multipart/form-data" method="POST" action="">
+        {% csrf_token %}
+
+        <!--  using forms-->
+        {{ form.as_p }}
+
+        <input type="submit" value="Upload" />
+    </form>
+    
+    <br><br>
+    {% for k in video.all %}
+    {{k.name}}
+    <br>
+    {{k.description}}
+    <br>
+   category:  {{k.category}}
+    <br>
+    <video width='400' controls>
+        <source src="{{k.videofile.url}}" type='video/mp4'>
+        Your browser does not support the video tag.
+    </video>
+    <br><br>
+    </p>
+    {% endfor %}
+    {% else %}
+
+    <p> you have to login to see video </p>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

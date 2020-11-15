@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="POST" action="{% url 'core:payment2' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+   
+   
+
+  
+    <br /> <br />
+    <input class="btn btn-primary" type="submit" value="Make Order" />
+</form>
+
+    {% endblock %}
